@@ -5,60 +5,38 @@ import java.util.Scanner;
 //Your code here
 
 public class Program7{
-    //Define your final variables here
-    // **HINT: Maybe the conversion rates?????**
-    double stanleynickels = 0;
-    double schrutebuck = 0;
-    double klevins = (schrutebuck*2.5);
-    double oSb = ((stanleynickels*1000))/(240*schrutebuck);
     
-    
-    
-    
-    
+        //Define your final variables here
+        // **HINT: Maybe the conversion rates?????**
+        Scanner myScanner = new Scanner(System.in);
 
+    
+            public  double convertMoney(double schruteBucks, double stanleyNickels, double klevins){
+            //implement a function that converts from the old format to the new format
+            final int klevinsInSchrutebuck = 20; //conversion rates
+            final int stanleynickelsInKlevin = 12;
+            final int stanleynickelsInSchrutebuck = 240;
 
-  
-    
-    
-    
-    public double convertMoney(int schruteBucks, int stanleyNickels, int klevins){
-        //implement a function that converts from the old format to the new format
-        
-        
-        
+      
+            System.out.println ("Enter old schrute-bucks: ");
+
+            double schrutebucks = myScanner.nextInt();
+
+            System.out.println ("Enter stanley-nickels: ");
+
+            double stanleynickels = myScanner.nextInt();
+
+            System.out.println ("Enter klevins: ");
+
+            double Klevins = myScanner.nextInt();
+
+            //convert money
+            double stanleyNickelTotal = Klevins * stanleynickelsInKlevin + stanleynickels;
+            double actualSchrutebucks = schrutebucks + (double) stanleyNickelTotal/stanleynickelsInSchrutebuck;
+            double finalSchrutebucks = Math.ceil(actualSchrutebucks*100)/100;//round up to nearest hundreths place
+            
+            
+            System.out.print("Decimal Schrute-bucks: " + finalSchrutebucks);
+            return finalSchrutebucks;
+        }
     }
-    
-    
-}
-
-DRIVER:
-package src.main.java;
-import java.util.Scanner;
-
-
-/**
- * Write a description of class Program7DRIVER here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class Program7DRIVER
-{
-  public static void main(String[] args){
-      Scanner myScanner=new Scanner (System.in);  
-      System.out.println ("Enter schrute-bucks: ");
-      
-      int schrutebuck = myScanner.nextInt();
-      
-      
-      Program7 myProg = new Program7();
-      
-      myProg.schrutebuck = schrutebuck;
-    
-        
-        
-    }
-}
-
-
